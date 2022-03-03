@@ -1,0 +1,28 @@
+version: "3.1"
+
+services:
+
+  aio-erp:
+    ports:
+        - '8345:80'
+    container_name: axelor
+    restart: always
+    image: axelor/aio-erp
+    volumes:
+      - axelor_data:/application.properties
+      - axelor_log_data:/var/log/postgresql
+      - axelor_pg_lib:/var/lib/postgresql
+      - axelor_tom_lib:/var/lib/tomcat
+      - axelor_tom_log:/var/log/tomcat
+#    environment:
+#      POSTGRES_USER:ll
+#      POSTGRES_PASSWORD
+#      POSTGRES_DB
+
+
+volumes:
+  axelor_data:
+  axelor_log_data:
+  axelor_pg_lib:
+  axelor_tom_lib:
+  axelor_tom_log:
